@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.whiteBoard{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width:75%;
+  background: #fff;
+  box-shadow: 0 0 14px 3px #dbdbdb;
+}
+.container{
+  max-width: 100%;
+}
+.logonForm{
+  padding: 5%;
+}
+.logonForm #form{
+  box-shadow: 0 0 8px 3px #dbdbdb;
+}
+.logonForm .socialLogin{
+  color: #fff;
+}
+.logonForm #fbBtn{
+  background-color: #3b589a;
+}
+.logonForm #gpBtn{
+  background-color: #de4b39;
+}
+.logonForm #lBtn{
+  background-color: #9da6b5;
+}
+.glyphicon {
+  position: absolute;
+  top: 0;
+  width: 4rem;
+  padding: 1rem;
+  height: 100%;
+  left: 0;
+  background-color: rgba(34, 34, 34, 0.16);
+}
+.logonLogo{
+  padding: 5% 0;
+  text-align: center;
+  background: url('./bluehalf.png') no-repeat center;
+  background-size: 100% 100%;
+}
+.logonLogo img{
+  margin-left: 20%;
+  width: 80%;
+}
+.logonLogo h1{
+  margin-left: 20%;
+}
