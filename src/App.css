@@ -27,21 +27,79 @@
   top: 50%;
   left:50%;
   transform: translate(-50%, -50%);
-  width:75%;
+  width:60%;
   background: #fff;
-  box-shadow: 0 0 14px 3px #dbdbdb;
+  background: url(./imgs/whiteboardbg.jpg) center no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0 0 20px 0px rgba(1, 1, 1, 0.33)
 }
 .container{
-  max-width: 100%;
+  width: 100%;
+}
+#logonTabs .tab-content{
+  padding: 0 5%;
+}
+.tab-content h3{
+  text-align: center;
+}
+#logonTabs>.nav-tabs>li{
+  box-shadow: inset 0 -5px 9px 2px #bdbdbd;
+  background-color: #d2d8d8;
+  width:50%;
+  text-align: center;
+}
+#logonTabs>.nav-tabs>li.active{
+  background-color: #fff;
+  box-shadow: none;
+}
+#logonTabs>.nav-tabs>li>a{
+  padding:2rem;
+  margin: 0;
+  border-radius: 0;
+  border: none;
 }
 .logonForm{
   padding: 5%;
 }
 .logonForm #form{
-  box-shadow: 0 0 8px 3px #dbdbdb;
+  box-shadow: 0px 0px 20px 0px rgba(1, 1, 1, 0.12)
+}
+input.form-control{
+  border: none;
+  border-bottom: 1px solid #d6d7d8;
+  border-radius: 0;
+  box-shadow: none;
+}
+.has-success .form-control,.form-control:focus,
+.has-success .form-control:focus,
+.has-error .form-control:focus,
+.has-warning .form-control:focus{
+  box-shadow: none;
+}
+div#logonForgot {
+  width:50%;
+  float: left;
+  text-align: -webkit-center;
+  color: #ca5e62;
+}
+div#logonForgot>a {
+  color: #ca5e62;
+}
+#btnSubmit{
+  padding: .8rem;
+  float: left;
+  width: 40%;
+  border-radius: 0;
+  background: #4cb050;
+  color: #fff;
 }
 .logonForm .socialLogin{
   color: #fff;
+}
+button.socialLogin{
+  padding: 17px 0;
+  border:none;
+  border-radius: 0 !important;
 }
 .logonForm #fbBtn{
   background-color: #3b589a;
@@ -64,12 +122,11 @@
 .logonLogo{
   padding: 5% 0;
   text-align: center;
-  background: url('./bluehalf.png') no-repeat center;
-  background-size: 100% 100%;
+  /*background: url('./bluehalf.png') no-repeat center;*/
+  /*background-size: 100% 100%;*/
 }
 .logonLogo img{
-  margin-left: 20%;
-  width: 80%;
+  width: 287px;
 }
 .logonLogo h1{
   margin-left: 20%;

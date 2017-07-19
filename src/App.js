@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col, Clearfix, Tabs, Tab, Form, FormGroup,
-    FormControl, ControlLabel, HelpBlock, Button, ButtonGroup, Glyphicon} from 'react-bootstrap';
+import {Grid, Row, Col, Tabs, Tab, FormGroup,
+    FormControl, ControlLabel, Button, ButtonGroup, Glyphicon} from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: ''
+            valueId: '',
+            valuePassword: ''
         };
     }
 
     getValidationState = () => {
-        const length = this.state.value.length;
+        const length = this.state.valueId.length;
         if (length > 10) return 'success';
         else if (length > 5) return 'warning';
         else if (length > 0) return 'error';
     };
 
-    handleChange = (e) => {
-        this.setState({ value: e.target.value });
+    handleChangeId = (e) => {
+        this.setState({ valueId: e.target.value });
+    };
+    handleChangePassword = (e) => {
+        this.setState({ valuePassword: e.target.value });
     };
   render() {
     return (
@@ -40,28 +44,27 @@ class App extends Component {
                                             <ControlLabel>User ID *</ControlLabel>
                                             <FormControl
                                                 type="text"
-                                                value={this.state.value}
+                                                value={this.state.valueId}
                                                 placeholder="User ID"
-                                                onChange={this.handleChange}
+                                                onChange={this.handleChangeId}
                                             />
                                         </FormGroup>
                                         <FormGroup
                                             controlId="password"
-                                            validationState={this.getValidationState()}
                                         >
                                             <ControlLabel>PASSWORD *</ControlLabel>
                                             <FormControl
                                                 type="password"
-                                                value={this.state.value}
+                                                value={this.state.valuePassword}
                                                 placeholder="Password"
-                                                onChange={this.handleChange}
+                                                onChange={this.handleChangePassword}
                                             />
                                         </FormGroup>
                                         <div id="logonForgot">
                                             <h4>forgot your password ?</h4>
                                             <a>Click here</a>
                                         </div>
-                                        <Button type="submit">
+                                        <Button type="submit" id="btnSubmit">
                                             Log In
                                         </Button>
                                     </form>
