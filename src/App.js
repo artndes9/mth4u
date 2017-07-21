@@ -69,7 +69,9 @@ class App extends Component {
                                         </Button>
                                     </form>
                                 </Tab>
-                                <Tab eventKey={2} title="SIGN UP">Tab 2 content</Tab>
+                                <Tab eventKey={2} title="SIGN UP">
+                                    Registrations will roll out soon..
+                                </Tab>
                             </Tabs>
                             <ButtonGroup vertical block>
                                 <Button className="socialLogin" id="fbBtn"><Glyphicon glyph="thumbs-up" /> Sign in with Facebook</Button>

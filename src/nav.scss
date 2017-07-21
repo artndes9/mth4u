@@ -1,0 +1,15 @@
+.navbar{
+    border-radius: 0;
+    margin-bottom: 0;
+    .navbar-nav{
+        li{
+            &:not(:first-child):after{
+            position: absolute;
+            content: '';
+            border-right: 1px solid #fff;
+            height: 30px;
+            top: 10px;
+        }
+        }
+    }
+}
