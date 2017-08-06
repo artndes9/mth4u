@@ -35,7 +35,7 @@ const options = {
     autoplay: true
 };
 
-class Slider extends Component{
+export default class Slider extends Component{
 
     render(){
 
@@ -59,5 +59,3 @@ class Slider extends Component{
         );
     }
 }
-
-export default Slider;
