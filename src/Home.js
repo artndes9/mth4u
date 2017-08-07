@@ -1,12 +1,20 @@
-import React, { Component } from 'react';
-import {Grid, Row, Col, Tabs, Tab, FormGroup,
-    FormControl, ControlLabel, Button, ButtonGroup, Glyphicon} from 'react-bootstrap';
-import MthNavbar from './navbar';
-import Slider from './slider';
-// import './Home.css';
+import React, { Component } from 'react'
+import { style } from "glamor"
+
+import MthNavbar from 'components/Navbar'
+import Slider from 'components/Slider'
+import HomePageInfo from 'components/Section/HomePageInfo'
+import PopularVideos from 'components/Section/PopularVideos'
+
+const styles = {
+    mainContainer: style({
+        position: "relative",
+        top: "calc(100vh - 72px)"
+    })
+}
 
 class Home extends Component {
-    constructor(props) {
+    constructor(props) { 
         super(props);
         this.state = {
             valueId: '',
@@ -18,22 +26,10 @@ class Home extends Component {
         <div className="body">
             <MthNavbar/>
             <Slider/>
-            <Grid>
-                <Row className="show-grid">
-                    <Col xs={6} md={4} className="promo">
-                        <h1>GET VIP</h1>
-                        <h3>No Ads</h3>
-                        <h3>Unlimited Access</h3>
-                        <h3>Questions Reqest</h3>
-                    </Col>
-                    <Col xs={6} md={4} className="ads">
-                        <img src="http://placehold.it/300x300" alt=""/>
-                    </Col>
-                    <Col xsHidden md={4} className="ads">
-                        <img src="http://placehold.it/300x400" alt=""/>
-                    </Col>
-                </Row>
-            </Grid>
+            <main className={styles.mainContainer}>
+                <HomePageInfo />
+                <PopularVideos />
+            </main>
         </div>
     );
   }
