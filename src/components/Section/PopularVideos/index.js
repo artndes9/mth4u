@@ -6,6 +6,8 @@ import _ from 'lodash'
 import Slider from 'react-slick'
 import Slide from './PopularVideoSlide'
 import { SliderNavNext, SliderNavPrev } from './SliderNav'
+import { VideoSpinner } from 'components/Spinners'
+
 
 const styles = {
     section: style({
@@ -13,13 +15,20 @@ const styles = {
     }),
     title: style({
         fontSize: "3.5rem",
-        textAlign: "center"
+        textAlign: "center",
+        marginBottom: 50
     }),
     sliderWrapper: style({
         minHeight: 300,
         height: 'auto',
         borderRadius: 5,
-        boxShadow: '0px 0px 5px 0px rgba(0,0,0,0.5)'
+        boxShadow: '0px 0px 5px 0px rgba(0,0,0,0.5)',
+        position: 'relative'
+    }),
+    spinner: style({
+        height: '100%',
+        width: '100%',
+        position: 'absolute'
     })
 }
 
@@ -35,7 +44,8 @@ export default class PopularVideos extends Component {
     componentDidMount = () => {
         let apiKey = "AIzaSyDkEPvHsUZltbuRIks_koTrax7YYVNG6O0"
         let channelId = "UCd_BeNwO51oPSY-2HgtkEhQ"
-        let popularVideos = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=id&order=date&maxResults=3&chart=mostPopular`
+        let numVideos = 5
+        let popularVideos = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=id&order=date&maxResults=${numVideos}&chart=mostPopular`
 
         axios.get(popularVideos)
             .then( (res) => {
@@ -49,7 +59,6 @@ export default class PopularVideos extends Component {
     }
 
     animatelayers = (current, next) => {
-        // console.log(this.slider.innerSlider.list)
         console.log(this.slider)
     }
 
@@ -66,8 +75,7 @@ export default class PopularVideos extends Component {
             slidesToScroll: 1,
             prevArrow : <SliderNavPrev />,
             nextArrow : <SliderNavNext />,
-            beforeChange: this.animatelayers,
-            // afterChange: (e) => {console.log(e)},
+            beforeChange: this.animatelayers
         };
 
         return(
@@ -78,7 +86,11 @@ export default class PopularVideos extends Component {
                         <Col xs={12} sm={12} md={8} mdPush={2}>
                             <div className={styles.sliderWrapper}>
                                 { 
-                                    _.isEmpty(videoList)? (<div></div>) : (
+                                    _.isEmpty(videoList)? (
+                                        <div className={styles.spinner}>
+                                            <VideoSpinner />
+                                        </div>
+                                        ) : (
                                         <Slider ref={ s => this.slider = s }  {...sliderOptions} >
                                             { _.map(videoList, (video, index) => <div key={video.id}><Slide index={index}  video={video} /></div> )  }
                                         </Slider>
