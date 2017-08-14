@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
@@ -10,11 +11,9 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed:400,500,600,700" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -26,8 +25,9 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
@@ -43,8 +43,8 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
-  <script>
+</body>
+<script>
     /*
      * @author  - @sebagarcia
      * @version 1.1.0
@@ -93,10 +93,10 @@
             var tiltY = 0;
             var paused = false;
             var imgs = [];
-            var imgArray = ["imgs/1.png","imgs/2.png","imgs/3.png", "imgs/4.png","imgs/5.png", "imgs/6.png","imgs/7.png","imgs/8.png","imgs/9.png", "imgs/10.png","imgs/11.png", "imgs/12.png","imgs/13.png","imgs/14.png","imgs/15.png", "imgs/16.png","imgs/17.png", "imgs/18.png","imgs/19.png","imgs/20.png","imgs/21.png", "imgs/22.png","imgs/23.png", "imgs/24.png","imgs/25.png","imgs/26.png","imgs/27.png", "imgs/28.png","imgs/29.png", "imgs/30.png","imgs/31.png"];
+            var imgArray = ["imgs/1.png", "imgs/2.png", "imgs/3.png", "imgs/4.png", "imgs/5.png", "imgs/6.png", "imgs/7.png", "imgs/8.png", "imgs/9.png", "imgs/10.png", "imgs/11.png", "imgs/12.png", "imgs/13.png", "imgs/14.png", "imgs/15.png", "imgs/16.png", "imgs/17.png", "imgs/18.png", "imgs/19.png", "imgs/20.png", "imgs/21.png", "imgs/22.png", "imgs/23.png", "imgs/24.png", "imgs/25.png", "imgs/26.png", "imgs/27.png", "imgs/28.png", "imgs/29.png", "imgs/30.png", "imgs/31.png"];
             var numParticles;
 
-            for (var i = 0; i < imgArray.length; i++){
+            for (var i = 0; i < imgArray.length; i++) {
                 imgs[i] = new Image();
                 imgs[i].src = imgArray[i];
             }
@@ -109,7 +109,9 @@
              * Init
              */
             function init() {
-                if (!canvasSupport) { return; }
+                if (!canvasSupport) {
+                    return;
+                }
 
                 //Create canvas
                 canvas = document.createElement('canvas');
@@ -137,7 +139,7 @@
                 }, false);
 
                 if (orientationSupport && !desktop) {
-                    window.addEventListener('deviceorientation', function () {
+                    window.addEventListener('deviceorientation', function() {
                         // Contrain tilt range to [-30,30]
                         tiltY = Math.min(Math.max(-event.beta, -30), 30);
                         tiltX = Math.min(Math.max(-event.gamma, -30), 30);
@@ -162,7 +164,9 @@
              * Draw particles
              */
             function draw() {
-                if (!canvasSupport) { return; }
+                if (!canvasSupport) {
+                    return;
+                }
 
                 winW = window.innerWidth;
                 winH = window.innerHeight;
@@ -245,10 +249,10 @@
                 this.parallaxOffsetY = 0;
                 // Initial particle position
                 this.position = {
-                    x: Math.ceil(Math.random() * canvas.width),
-                    y: Math.ceil(Math.random() * canvas.height)
-                }
-                // Random particle speed, within min and max values
+                        x: Math.ceil(Math.random() * canvas.width),
+                        y: Math.ceil(Math.random() * canvas.height)
+                    }
+                    // Random particle speed, within min and max values
                 this.speed = {}
                 switch (options.directionX) {
                     case 'left':
@@ -282,10 +286,10 @@
 
 
             Particle.prototype.draw = function(i) {
-//                imgs = new Image();
+                //                imgs = new Image();
                 var randomNumber = Math.floor(i / (particles.length / imgArray.length));
-//                imgs.src = imgArray[randomNumber];
-                ctx.drawImage(imgs[randomNumber] ,this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY);
+                //                imgs.src = imgArray[randomNumber];
+                ctx.drawImage(imgs[randomNumber], this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY);
             };
 
 
@@ -365,7 +369,7 @@
                 this.stackPos = i;
             };
 
-            function option (key, val) {
+            function option(key, val) {
                 if (val) {
                     options[key] = val;
                 } else {
@@ -428,7 +432,7 @@
                             returnVal = $.data(this, 'plugin_' + pluginName)[methodName].apply(this, args);
                         }
                     });
-                    if (returnVal !== undefined){
+                    if (returnVal !== undefined) {
                         return returnVal;
                     } else {
                         return this;
@@ -454,17 +458,19 @@
     (function() {
         var lastTime = 0;
         var vendors = ['ms', 'moz', 'webkit', 'o'];
-        for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-            window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-            window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-                || window[vendors[x]+'CancelRequestAnimationFrame'];
+        for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+            window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+            window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] ||
+                window[vendors[x] + 'CancelRequestAnimationFrame'];
         }
 
         if (!window.requestAnimationFrame)
             window.requestAnimationFrame = function(callback, element) {
                 var currTime = new Date().getTime();
                 var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-                var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+                var id = window.setTimeout(function() {
+                        callback(currTime + timeToCall);
+                    },
                     timeToCall);
                 lastTime = currTime + timeToCall;
                 return id;
@@ -476,8 +482,9 @@
             };
     }());
 
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         particleground(document.getElementById('particles'), {});
     }, false);
-  </script>
+</script>
+
 </html>

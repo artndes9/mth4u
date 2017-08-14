@@ -10,6 +10,7 @@ const styles = {
         '& h1': {
             width: '100%',
             textAlign: "center",
+            marginBottom: 30
         },
         '& li': {
             fontSize: "2.2rem",

@@ -5,6 +5,7 @@ import MthNavbar from 'components/Navbar'
 import Slider from 'components/Slider'
 import HomePageInfo from 'components/Section/HomePageInfo'
 import PopularVideos from 'components/Section/PopularVideos'
+import Testimonials from 'components/Section/Testimonials'
 
 const styles = {
     mainContainer: style({
@@ -29,6 +30,7 @@ class Home extends Component {
             <main className={styles.mainContainer}>
                 <HomePageInfo />
                 <PopularVideos />
+                <Testimonials />
             </main>
         </div>
     );
