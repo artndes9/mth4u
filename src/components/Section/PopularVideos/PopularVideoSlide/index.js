@@ -1,6 +1,5 @@
 import React from 'react'
 import {style, media} from "glamor"
-import _ from 'lodash'
 
 
 const styles = {
@@ -62,10 +61,8 @@ const styles = {
 
 export default class PopularVideoSlide extends React.Component {
 
-    
-    
     render() {
-        let {video, index} = this.props
+        let {video} = this.props
 
         return(
             <div className={styles.slideWrapper}>
@@ -74,6 +71,10 @@ export default class PopularVideoSlide extends React.Component {
                 </div>
                 <div className={styles.slideInfo}>
                     <h3 className={styles.slideTitle}>{video.snippet.title}</h3>
+                    <p className={styles.slideDesc}>
+                        <span>{video.statistics.viewCount} Views</span>  &nbsp;
+                        <span>{video.statistics.likeCount} Likes</span>
+                    </p>
                 </div>
             </div>
         )
