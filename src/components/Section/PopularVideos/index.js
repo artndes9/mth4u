@@ -44,7 +44,8 @@ export default class PopularVideos extends Component {
             videoList: []
         }
 
-        this.videoCarouselState = new VideoCarouselState(null, null)
+        this.videoCarouselState = new VideoCarouselState({currentVideo: null, previousSibling: null})
+
     }   
     
 
@@ -68,7 +69,7 @@ export default class PopularVideos extends Component {
             } )
             .then( (res) => {
                 this.setState({videoList: res.data.items})
-                this.videoCarouselState.update(res.data.items[0].id, null, false, true)
+                this.videoCarouselState.update({currentVideo: res.data.items[0].id})
             } )
     }
 
@@ -98,7 +99,7 @@ export default class PopularVideos extends Component {
                                     <div className={styles.spinner}>
                                         <VideoSpinner />
                                     </div>
-                                    ) : ( <VideoPreview  /> ) 
+                                    ) : ( <VideoPreview  videoList={ videoList }  /> ) 
                             }
                         </Col>
                         <Col xs={12} sm={12} md={6} mdPush={1} lg={6} lgPush={1} >

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {style, media} from 'glamor'
 import classNames from 'classnames'
+import ReactDOM from 'react-dom'
 
 const styles= {
     wrapper: style({
@@ -44,6 +45,11 @@ export default class VideoSlide extends Component {
 
     componentDidMount = () => { this.context.videoCarouselState.subscribe(() => this.forceUpdate()) }
 
+    setSlidePosition(e) {
+        let el  = ReactDOM.findDOMNode(e.currentTarget)
+        this.context.videoCarouselState.update({ currentSlidePos: el.getBoundingClientRect()  })
+    }
+
     render() {
         
         let {video} = this.props
@@ -56,7 +62,7 @@ export default class VideoSlide extends Component {
         })
 
         return (
-            <div className={wrapperClasses}  >
+            <div className={wrapperClasses} onClick={e => this.setSlidePosition(e) }  >
                 { 
                     <img style={{ backgroundImage: `url(${video.snippet.thumbnails.medium.url})` }} alt="" />
                 }

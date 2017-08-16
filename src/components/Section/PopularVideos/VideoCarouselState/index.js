@@ -1,20 +1,24 @@
 import _ from 'lodash'
 
+let defaultOpts = {
+    currentVideo: null,
+    previousSibling: null,
+    showPrevNav: false,
+    showNextNav: true,
+    currentSlidePos: null       
+}
+
 export default class VideoCarouselState {
-    constructor(currentVideo, previousSibling) {
-        this.currentVideo = currentVideo
-        this.previousSibling = previousSibling
-        this.showPrevNav = false
-        this.showNextNav = true
+    constructor(options) {
+        var self = this
+        self = _.assign(this, defaultOpts, options)       
         this.subscriptions = []
+        return self
     }
 
-    update(currentVideoId, previousSiblingId, showPrevNav, showNextNav) {
-        this.currentVideo = currentVideoId
-        this.previousSibling = previousSiblingId
-        this.showPrevNav = showPrevNav
-        this.showNextNav = showNextNav
-        _.each(this.subscriptions, f => f())
+    update(options, self = this) {
+        self = _.assign(self, options)   
+        _.each(self.subscriptions, f => f())
     }
 
     subscribe(func) {

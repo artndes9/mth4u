@@ -13,29 +13,36 @@ class VideoCarousel extends Component {
     shouldComponentUpdate = (nextProps, nextState) => this.props.videoList !== nextProps.videoList
 
     setCarouselState = (prev,current) => {
-        let currentVideoId = (mobile)? this.props.videoList[current].id: this.context.videoCarouselState.currentVideo
-        let previousSiblingId =  (this.props.videoList[current-1] !== undefined )? this.props.videoList[current-1].id : null
-        let showPrevNav = current !== 0
-        let showNextNav = current < (this.props.videoList.length - videoNos)
-        this.context.videoCarouselState.update(currentVideoId,previousSiblingId, showPrevNav, showNextNav)
+        var state = {
+            showPrevNav: current !== 0,
+            showNextNav: current < (this.props.videoList.length - videoNos)
+        }
+        if ( (this.props.videoList[current-1] !== undefined )  ) {
+            state = _.assign(state, {previousSibling: this.props.videoList[current-1].id } )
+        }
+        if ( mobile ) {
+            state = _.assign(state, {currentVideo: this.props.videoList[current].id } )
+        }
+        this.context.videoCarouselState.update(state)
     }
 
     setCurrentVideo(currentId) {
-        let  { currentVideo, previousSibling, showPrevNav, showNextNav } = this.context.videoCarouselState 
-        let currentVideoId = (!mobile)? currentId: currentVideo
-
-        this.context.videoCarouselState.update(currentVideoId,previousSibling, showPrevNav, showNextNav)
+        var state = {}        
+        if ( !mobile ) {
+            state = _.assign(state, {currentVideo: currentId } )
+        }
+        this.context.videoCarouselState.update(state)
     }
 
     render(){
 
         const sliderOptions = {
+            accessibility: false,
             dots: false,
             infinite: false,
             autoPlay: false,
-            speed: 500,
-            slidesToShow: videoNos
-            ,
+            speed: 1000,
+            slidesToShow: videoNos,
             slidesToScroll: 1,
             centerMode: mobile,
             focusOnSelect: mobile,
