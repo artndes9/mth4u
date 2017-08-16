@@ -10,6 +10,7 @@ const styles = {
         '& h1': {
             width: '100%',
             textAlign: "center",
+            marginBottom: 30
         },
         '& li': {
             fontSize: "2.2rem",
@@ -35,7 +36,7 @@ export default class HomePageInfo extends Component {
             <section className={styles.section} >
                 <Grid>
                     <Row className="showgrid">
-                        <Col {...styles.getVip} xs={12} sm={12} md={4} lg={4} >
+                        <Col {...styles.getVip} xs={12} sm={4} md={4} lg={4} >
                             <h1>Get VIP</h1>
                             <ul>
                                 <li>No Ads</li>
@@ -44,13 +45,13 @@ export default class HomePageInfo extends Component {
                             </ul>
                         </Col>
 
-                        <Col {...styles.adsArea} xs={12} sm={12} md={4} lg={4} >
+                        <Col {...styles.adsArea} xs={12} sm={4} md={4} lg={4} >
                             <div>
                                 <h1>Ads Area</h1>
                             </div>
                         </Col>
 
-                        <Col {...styles.adsArea} xs={12} sm={12} md={4} lg={4} >
+                        <Col {...styles.adsArea} xs={12} sm={4} md={4} lg={4} >
                             <div>
                                 <h1>Ads Area</h1>
                             </div>

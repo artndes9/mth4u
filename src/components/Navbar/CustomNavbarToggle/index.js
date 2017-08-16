@@ -1,16 +1,18 @@
 import React,{ Component } from "react"
-import { style, before, after } from 'glamor'
+import { style, before, after, media } from 'glamor'
 import colors from "themes/colors"
 import classNames from "classnames"
 
 const styles = {
     toggleWrapper: style({
-        width: 35,
+        width: 28,
         height:50,
         position: "absolute",
         right: 0,
         marginRight: 10
-    }),
+    },media('(min-width:768px)', {
+        display: 'none'
+    })),
     hamburger: style({
             backgroundColor: colors.grey,
             height: 2,
