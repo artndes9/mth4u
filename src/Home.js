@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import { style } from "glamor"
 
-import MthNavbar from 'components/Navbar'
+import Navbar from 'components/Navbar'
 import Slider from 'components/Slider'
 import HomePageInfo from 'components/Section/HomePageInfo'
 import PopularVideos from 'components/Section/PopularVideos'
 import Testimonials from 'components/Section/Testimonials'
+import Footer from 'components/Footer'
 
 const styles = {
     mainContainer: style({
         position: "relative",
-        top: "calc(100vh - 72px)"
+        marginTop: "calc(100vh - 72px)"
     })
 }
 
@@ -25,13 +26,14 @@ class Home extends Component {
   render() {
     return (
         <div className="body">
-            <MthNavbar/>
+            <Navbar/>
             <Slider/>
             <main className={styles.mainContainer}>
                 <HomePageInfo />
                 <PopularVideos />
                 <Testimonials />
             </main>
+            <Footer />
         </div>
     );
   }
