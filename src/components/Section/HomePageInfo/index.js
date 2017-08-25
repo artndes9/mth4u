@@ -8,7 +8,7 @@ const styles = {
     }),
     getVip: style({
         '& h1': {
-            width: '100%',
+            width: "100%",
             textAlign: "center",
             marginBottom: 30
         },
@@ -27,6 +27,27 @@ const styles = {
             fontSize: "3.5rem",
             textAlign: "center"
         }
+    }),
+    titleBg: style({
+        marginLeft: "auto",
+        marginRight: "auto",
+        backgroundColor: "#2e4766",
+        '&::before':{
+            content: "url(./imgs/bannerbg.png)",
+            position: "absolute",
+            left: "-2px",
+            height: "3rem",
+            width: "2rem",
+            overflow: "hidden"
+        },
+        '&::after':{
+            content: "url(./imgs/titleAfter.svg)",
+            position: "absolute",
+            right: "14px",
+            height: "4rem",
+            width: "1.5rem",
+            overflow: "hidden"
+        }
     })
 }
 
@@ -37,7 +58,7 @@ export default class HomePageInfo extends Component {
                 <Grid>
                     <Row className="showgrid">
                         <Col {...styles.getVip} xs={12} sm={4} md={4} lg={4} >
-                            <h1>Get VIP</h1>
+                            <h1 {...styles.titleBg} >Get VIP</h1>
                             <ul>
                                 <li>No Ads</li>
                                 <li>Unlimited Access</li>

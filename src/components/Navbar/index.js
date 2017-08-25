@@ -6,7 +6,7 @@ import { style } from "glamor"
 const styles = {
     navbar: style({
         backgroundColor: 'transparent',
-        posistion: "relative",
+        position: "relative",
         zIndex: 100,
         borderRadius: 0,
         borderColor: "transparent",
@@ -28,7 +28,7 @@ class MthNavbar extends Component{
 
     render(){
           return(
-                <Navbar {...styles.navbar} collapseOnSelect expanded={this.state.expanded} onToggle={() => this.toggle(false) }>
+                <Navbar {...styles.navbar} collapseOnSelect expanded={this.state.expanded} onToggle={() => this.toggle(false) } fluid>
                     <Navbar.Header>
                         <Navbar.Brand>
                             <img src="imgs/mthLogo.png" alt="mth4u Brand Logo"/>
