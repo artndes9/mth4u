@@ -4,7 +4,9 @@ import { style } from "glamor"
 
 const styles = {
     section: style({
-        padding: "30px 0"
+        padding: "30px 0",
+        color: "#fdfdff",
+        backgroundColor: "#282832"
     }),
     getVip: style({
         '& h1': {
@@ -12,8 +14,27 @@ const styles = {
             textAlign: "center",
             marginBottom: 30
         },
-        '& li': {
+        '& ul': {
+            marginBottom : "30px",
+            '& li': {
+            listStyle: "none",
             fontSize: "2.2rem",
+                '& span.fa': {
+                    color: "#4fa356"
+                }
+            }
+        },
+        '& a':{
+            backgroundColor: "#000",
+            padding: "2%",
+            textDecoration: "none",
+            marginLeft: "50px",
+            color: "#4fa356",
+            transition: "all .3s ease",
+            '&:hover':{
+                backgroundColor: "#282832",
+                color: "#eee",
+            }
         }
     }),
     adsArea: style({
@@ -29,22 +50,25 @@ const styles = {
         }
     }),
     titleBg: style({
+        color: "#282832",
         marginLeft: "auto",
         marginRight: "auto",
-        backgroundColor: "#2e4766",
+        backgroundColor: "#e8eff7",
         '&::before':{
-            content: "url(./imgs/bannerbg.png)",
+            content: "url(./imgs/titleInvertedBefore.svg)",
             position: "absolute",
             left: "-2px",
-            height: "3rem",
+            top: "25px",
+            height: "31px",
             width: "2rem",
             overflow: "hidden"
         },
         '&::after':{
-            content: "url(./imgs/titleAfter.svg)",
+            content: "url(./imgs/titleInvertedAfter.svg)",
             position: "absolute",
             right: "14px",
-            height: "4rem",
+            top: "20px",
+            height: "38px",
             width: "1.5rem",
             overflow: "hidden"
         }
@@ -60,10 +84,12 @@ export default class HomePageInfo extends Component {
                         <Col {...styles.getVip} xs={12} sm={4} md={4} lg={4} >
                             <h1 {...styles.titleBg} >Get VIP</h1>
                             <ul>
-                                <li>No Ads</li>
-                                <li>Unlimited Access</li>
-                                <li>Free Equations</li>
+                                <li><span className="fa fa-check"></span> No Ads</li>
+                                <li><span className="fa fa-check"></span> Unlimited Access</li>
+                                <li><span className="fa fa-check"></span> Free Equations</li>
                             </ul>
+                            <a href=" ">1 Month for &#8377; 150</a>
+                            <a href=" ">1 Year for &#8377; 1500</a>
                         </Col>
 
                         <Col {...styles.adsArea} xs={12} sm={4} md={4} lg={4} >
