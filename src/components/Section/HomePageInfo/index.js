@@ -12,6 +12,7 @@ const styles = {
         '& h1': {
             width: "100%",
             textAlign: "center",
+            fontFamily: "'Roboto', sans-serif",
             marginBottom: 30
         },
         '& ul': {
@@ -82,7 +83,7 @@ export default class HomePageInfo extends Component {
                 <Grid>
                     <Row className="showgrid">
                         <Col {...styles.getVip} xs={12} sm={4} md={4} lg={4} >
-                            <h1 {...styles.titleBg} >Get VIP</h1>
+                            <h1 {...styles.titleBg} >GET VIP</h1>
                             <ul>
                                 <li><span className="fa fa-check"></span> No Ads</li>
                                 <li><span className="fa fa-check"></span> Unlimited Access</li>
