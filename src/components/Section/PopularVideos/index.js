@@ -17,9 +17,34 @@ const styles = {
         backgroundColor: '#e9e9e9'
     }),
     title: style({
-        fontSize: "3.5rem",
+        position: "relative",
+        fontFamily: "'Roboto', sans-sarif",
+        padding: "1rem",
+        fontSize: "36px",
         textAlign: "center",
-        marginBottom: 50
+        marginBottom: "50",
+        color: "#eee",
+        width: "35%",
+        marginLeft: "auto",
+        marginRight: "auto",
+        boxShadow: "0px 2px 7px 1px #9c9c9c",
+        backgroundColor: "#2e4766",
+        '&::before':{
+            content: "url(./imgs/titleBefore.svg)",
+            position: "absolute",
+            left: "-1.9rem",
+            height: "38px",
+            width: "2rem",
+            overflow: "hidden"
+        },
+        '&::after':{
+            content: "url(./imgs/titleAfter.svg)",
+            position: "absolute",
+            right: "0",
+            height: "38px",
+            width: "1.5rem",
+            overflow: "hidden"
+        }
     }),
     sliderWrapper: style({
         minHeight: 300,
@@ -32,6 +57,11 @@ const styles = {
         height: '100%',
         width: '100%',
         position: 'absolute'
+    }),
+    socialFollow: style({
+        position: "relative",
+        width: "100%",
+        textAlign: "center"
     })
 }
 
@@ -119,11 +149,18 @@ export default class PopularVideos extends Component {
                             </Row>
                         </Col>
                     </Row>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-
+                    <Row {...styles.socialFollow}>
+                        <h1>Connect with mth4u</h1>
+                        <Col xs={12} md={4} lg={4}>
+                             <div className="g-ytsubscribe" data-channelid="UCd_BeNwO51oPSY-2HgtkEhQ" data-layout="full" data-count="default"></div>
+                        </Col>
+                        <Col xs={12} md={4} lg={4}>
+                             <iframe title="fbLike" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FMTHforU%2F&width=147&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId" width="147" height="46" style={{border:"none",overflow:"hidden"}} scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        </Col>
+                        <Col xs={12} md={4} lg={4}>
+                             <iframe title="fbShare" src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2FMTHforU%2F&width=450&height=80&layout=standard&size=large&show_faces=true&appId" width="450" height="80" style={{border:"none",overflow:"hidden"}} scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        </Col>
+                    </Row>
                     {
 
                         // <Row>

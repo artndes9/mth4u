@@ -26,8 +26,10 @@ const styles = {
             }
         },
         '& a':{
+            position: "relative",
+            float: "left",
             backgroundColor: "#000",
-            padding: "2%",
+            padding: "1.2rem",
             textDecoration: "none",
             marginLeft: "50px",
             color: "#4fa356",
