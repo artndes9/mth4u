@@ -6,6 +6,7 @@ import Slider from 'react-slick'
 const styles = {
     section: style({
         padding: "50px 0",
+        background: "url('http://placehold.it/1920x500') center no-repeat",
         '& .title': {
             textAlign: 'center',
             marginBottom: 30
