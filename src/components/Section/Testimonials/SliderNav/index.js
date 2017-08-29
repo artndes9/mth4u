@@ -68,6 +68,6 @@ const SliderNavNext = (props) => {
     }
 
 export {
-    SliderNavNext,
-    SliderNavPrev
+    // SliderNavNext,
+    // SliderNavPrev
 }
