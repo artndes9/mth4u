@@ -155,10 +155,10 @@ export default class Footer extends Component {
                     <Row bsClass="row copyright" {...styles.copyrights}>
                         <Col sm={12} mdPush={4} md={4} >
                             <ul>
-                                <li>HOME</li>
-                                <li>LEARN</li>
-                                <li>GET VIP</li>
-                                <li>CONTACT US</li>
+                                <li><a href=" ">HOME</a></li>
+                                <li><a href="">LEARN</a></li>
+                                <li><a href="">GET VIP</a></li>
+                                <li><a href="">CONTACT US</a></li>
                             </ul>
                             
                         </Col>
