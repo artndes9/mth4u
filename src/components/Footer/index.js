@@ -8,12 +8,9 @@ const styles = {
         textAlign: "center",
         '& .footer-main': {
             backgroundColor: '#282832',
-            paddingTop: 80,
-            paddingBottom: 50,
-            '& ul': {
-                width: "50%",
-                margin: "auto",
-                textAlign: "left",
+            fontSize: "20px",
+            '& .col-md-4': {
+                padding: "2em"
             },
             '& a': {
                 color: '#fff',
@@ -50,6 +47,10 @@ const styles = {
     footerLinks: style({
         listStyle: 'none',
         color : "#fff",
+        margin: "36px auto auto 40px",
+        textAlign: "left",
+        paddingLeft: "0",
+        lineHeight: "2em",
         '& li': {
             padding: '3px 0px',
             color: "inherit",
@@ -58,8 +59,31 @@ const styles = {
                 content: "'\\f0da'",
                 fontFamily: "FontAwesome",
                 color: "inherit",
-                fontSize: "14px",
+                fontSize: "1em",
                 left: "-4px"
+            }
+        }
+    }),
+    copyrights: style({
+        backgroundColor: '#000',
+        color: "#eee",
+        fontSize: "13",
+        paddingTop:"15",
+        '& .col-md-4':{
+            padding: "0 !important"
+        },
+        '& ul': {
+            listStyle: "none",
+            paddingLeft: "0",
+            '& li':{
+                display: "inline-block",
+                marginLeft: "10px",
+                '&:not(:first-child)::before': {
+                    position: "relative",
+                    content: "' | '",
+                    left: "-4px"
+
+                }
             }
         }
     })
@@ -108,9 +132,10 @@ export default class Footer extends Component {
                     <Row>
                         <Col md={4} xs={12}>
                             <ul className={styles.footerLinks}>
-                                <li><a href="">Home</a></li>
-                                <li><a href="">Equations</a></li>
-                                <li><a href="">QuickSolve</a></li>
+                                <li><a href="">Community Guidelines</a></li>
+                                <li><a href="">Terms of Service</a></li>
+                                <li><a href="">Copyright Policy</a></li>
+                                <li><a href="">Privacy Policy</a></li>
                             </ul>
                         </Col>
 
@@ -125,6 +150,23 @@ export default class Footer extends Component {
                             <Col sm={10}>
                             <h3>Contacts</h3>
                             </Col>
+                        </Col>
+                    </Row>
+                    <Row bsClass="row copyright" {...styles.copyrights}>
+                        <Col sm={12} mdPush={4} md={4} >
+                            <ul>
+                                <li>HOME</li>
+                                <li>LEARN</li>
+                                <li>GET VIP</li>
+                                <li>CONTACT US</li>
+                            </ul>
+                            
+                        </Col>
+                        <Col sm={12} md={4} mdPull={4}>
+                            <p> &copy; 2017 MTH4U, All Rights Reserved</p>
+                        </Col>
+                        <Col md={4}>
+                            <p> powered by the, rogue Pix<small>x</small>el</p>                        
                         </Col>
                     </Row>
                 </Grid>

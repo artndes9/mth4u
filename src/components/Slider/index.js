@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import Owl from 'react-owl-carousel2'
-import {style, media} from "glamor"
+import {style} from "glamor"
 
 const styles = {
     owlWrapper: style({
         position: "absolute",
         top: 0,
-        width: '100vw'
-    }, media('(min-width: 768px)',{
-        width: 'calc(100vw - 15px)'        
-    })),
+        width: '100%'
+    }),
     slide: style({
         width: "100vw",
         height: "100vh"

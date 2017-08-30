@@ -12,8 +12,8 @@ const styles = {
         '& h1': {
             width: "100%",
             textAlign: "center",
-            fontFamily: "'Roboto', sans-serif",
-            marginBottom: 30
+            padding: ".18em",
+            marginBottom: ".8em"
         },
         '& ul': {
             marginBottom : "30px",
@@ -31,7 +31,7 @@ const styles = {
             backgroundColor: "#000",
             padding: "1.2rem",
             textDecoration: "none",
-            marginLeft: "50px",
+            margin: "12",
             color: "#4fa356",
             transition: "all .3s ease",
             '&:hover':{

@@ -1,7 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Asap Condensed', sans-serif;
+    overflow-x: hidden;
+    font-family: 'Comfortaa', cursive;
 }
 
 canvas {

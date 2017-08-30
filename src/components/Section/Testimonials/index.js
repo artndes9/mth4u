@@ -8,6 +8,7 @@ const styles = {
         padding: "80px 0",
         minHeight: "300px",
         background: "url('http://placehold.it/1920x500') center no-repeat",
+        backgroundSize: "cover",
         '& .title': {
             textAlign: 'center',
             marginBottom: 30
@@ -19,6 +20,7 @@ const styles = {
         '& .slick-track':{
             '& p': {
                 fontSize: "22px",
+                padding: "2em",
                 '& quote': {
                     float: "left",
                 },
@@ -73,7 +75,7 @@ export default class Testimonials extends Component {
             <section className={styles.section} >
                 <Grid>
                     <Row>
-                        <Col xs={12} sm={12} md={8} mdPush={2} lg={8} lgPush={2} >                
+                        <Col xs={10} xsPush={1} xsPull={1} sm={10} smPush={1} smPull={1} md={10} mdPush={1} mdPull={1} lg={12} lgPush={0} lgPull={0} >                
                             <div className={styles.sliderWrapper}>
                                 <Slider {...sliderSettings}>
                                     <p>
