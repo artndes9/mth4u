@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import PropTypes from 'prop-types'
 import {Grid, Row, Col} from "react-bootstrap"
-import {style} from "glamor"
+import {style, media} from "glamor"
 import axios from "axios"
 import _ from 'lodash'
 import VideoCarousel from './VideoCarousel'
@@ -43,7 +43,11 @@ const styles = {
             width: "1.5rem",
             overflow: "hidden"
         }
-    }),
+    },
+        media('(max-width: 480px)', {
+            width: '50%'
+        })
+    ),
     sliderWrapper: style({
         minHeight: 300,
         height: 'auto',
