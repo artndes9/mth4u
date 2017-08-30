@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { style } from 'glamor'
+import { style, media } from 'glamor'
 import { Grid, Row, Col } from 'react-bootstrap'
 import Slider from 'react-slick'
 
@@ -57,8 +57,12 @@ const styles = {
             height: "20px",
             content: "'\\f10c'",
         },
-    })
-}
+    },
+        media('(max-width: 480px)', {
+            lineHeight: '1.2'
+        })
+    )
+};
 
 const sliderSettings = {
     dots: true,
