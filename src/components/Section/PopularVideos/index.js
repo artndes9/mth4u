@@ -1,9 +1,9 @@
+import _ from 'lodash'
 import React, {Component} from "react"
 import PropTypes from 'prop-types'
 import {Grid, Row, Col} from "react-bootstrap"
 import {style, media} from "glamor"
 import axios from "axios"
-import _ from 'lodash'
 import VideoCarousel from './VideoCarousel'
 import VideoPreview from './VideoPreview'
 import CurrentVideoInfo from './CurrentVideoInfo'
@@ -157,10 +157,10 @@ export default class PopularVideos extends Component {
                              <div className="g-ytsubscribe" data-channelid="UCd_BeNwO51oPSY-2HgtkEhQ" data-layout="full" data-count="default"></div>
                         </Col>
                         <Col xs={12} md={4} lg={4}>
-                             <iframe title="fbLike" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FMTHforU%2F&width=147&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId" width="147" height="46" style={{border:"none",overflow:"hidden",position:"relative",top:"18px"}} scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                             <iframe title="fbLike" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FMTHforU%2F&width=147&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId" width="147" height="46" style={{border:"none",overflow:"hidden",position:"relative",top:"18px"}} scrolling="no" allowTransparency="true"></iframe>
                         </Col>
                         <Col xs={12} md={4} lg={4}>
-                             <iframe title="fbShare" src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2FMTHforU%2F&width=450&height=80&layout=standard&size=large&show_faces=true&appId" width="450" height="80" style={{border:"none",overflow:"hidden",position:"relative",top:"18px",maxWidth:"100%"}} scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                             <iframe title="fbShare" src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2FMTHforU%2F&width=450&height=80&layout=standard&size=large&show_faces=true&appId" width="450" height="80" style={{border:"none",overflow:"hidden",position:"relative",top:"18px",maxWidth:"100%"}} scrolling="no" allowTransparency="true"></iframe>
                         </Col>
                     </Row>
                     {

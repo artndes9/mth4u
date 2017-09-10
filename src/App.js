@@ -25,6 +25,8 @@ class App extends Component {
     handleChangePassword = (e) => {
         this.setState({ valuePassword: e.target.value });
     };
+
+
   render() {
     return (
         <div className="whiteBoard">

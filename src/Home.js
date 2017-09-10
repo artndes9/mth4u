@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import { style } from "glamor"
-
 import Navbar from 'components/Navbar'
 import Slider from 'components/Slider'
 import HomePageInfo from 'components/Section/HomePageInfo'
 import PopularVideos from 'components/Section/PopularVideos'
 import Testimonials from 'components/Section/Testimonials'
 import Footer from 'components/Footer'
+import TransitionGroup from 'react-addons-transition-group';
+
+
 
 const styles = {
     mainContainer: style({
-        position: "relative",
-        marginTop: "calc(100vh - 72px)"
+        position: "relative"
     })
-}
+};
 
 class Home extends Component {
     constructor(props) { 
@@ -23,11 +24,17 @@ class Home extends Component {
             valuePassword: ''
         };
     }
+
+
   render() {
+
     return (
         <div className="body">
             <Navbar/>
-            <Slider/>
+            <TransitionGroup>
+                <Slider/>
+            </TransitionGroup>
+
             <main className={styles.mainContainer}>
                 <HomePageInfo />
                 <PopularVideos />

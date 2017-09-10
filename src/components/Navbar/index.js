@@ -5,11 +5,13 @@ import { style } from "glamor"
 
 const styles = {
     navbar: style({
-        backgroundColor: 'transparent',
+        backgroundColor: '#000000',
+        color: "#D3D3D3",
         position: "relative",
         zIndex: 100,
         borderRadius: 0,
-        borderColor: "transparent",
+        marginBottom: "0",
+        border: "0",
     }),
     navbarCollapse: style({
         borderColor: "transparent !important",

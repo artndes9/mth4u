@@ -5,9 +5,10 @@ import Slider from 'react-slick'
 
 const styles = {
     section: style({
-        padding: "80px 0",
+        padding: "12rem 0",
         minHeight: "300px",
-        background: "url('http://placehold.it/1920x500') center no-repeat",
+        background: "url('../imgs/testimonial.jpg') center no-repeat",
+        color: "#fff",
         backgroundSize: "cover",
         '& .title': {
             textAlign: 'center',
@@ -19,7 +20,7 @@ const styles = {
         lineHeight: "2.5",
         '& .slick-track':{
             '& p': {
-                fontSize: "22px",
+                fontSize: "2em",
                 padding: "2em",
                 '& quote': {
                     float: "left",
