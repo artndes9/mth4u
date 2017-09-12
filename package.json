@@ -17,6 +17,7 @@
         "react-bootstrap": "^0.31.0",
         "react-dom": "^15.6.1",
         "react-owl-carousel2": "^0.2.1",
+        "react-preload": "^0.5.1",
         "react-slick": "^0.14.11",
         "react-tap-event-plugin": "^2.0.1",
         "react-youtube": "^7.4.0",

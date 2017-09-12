@@ -81,7 +81,7 @@ export default class Testimonials extends Component {
             <section className={styles.section} >
                 <Grid>
                     <Row>
-                        <Col xs={10} xsPush={1} xsPull={1} sm={10} smPush={1} smPull={1} md={10} mdPush={1} mdPull={1} lg={12} lgPush={0} lgPull={0} >                
+                        <Col xs={10} xsPush={1} xsPull={1} sm={10} smPush={1} smPull={1} md={10} mdPush={1} mdPull={1} lg={12} lgPush={0} lgPull={0} >
                             <div className={styles.sliderWrapper}>
                                 <Slider {...sliderSettings}>
                                     <p>
