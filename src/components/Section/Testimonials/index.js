@@ -18,10 +18,11 @@ const styles = {
     sliderWrapper: style({
         margin: "auto",
         lineHeight: "2.5",
-        '& .slick-track':{
+            padding: "1.5em",
+            '& .slick-track':{
             '& p': {
                 fontSize: "2em",
-                padding: "2em",
+                padding: "1.5em",
                 '& quote': {
                     float: "left",
                 },
