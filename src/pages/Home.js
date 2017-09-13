@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { style } from "glamor"
-import Navbar from 'components/Navbar'
-import Slider from 'components/Slider'
-import HomePageInfo from 'components/Section/HomePageInfo'
-import PopularVideos from 'components/Section/PopularVideos'
+import Navbar from '../components/Navbar'
+import Slider from '../components/Slider'
+import HomePageInfo from '../components/Section/HomePageInfo'
+import PopularVideos from '../components/Section/PopularVideos'
 import Preload from 'react-preload'
-import Testimonials from 'components/Section/Testimonials'
-import Footer from 'components/Footer'
+import Testimonials from '../components/Section/Testimonials'
+import Footer from '../components/Footer'
 import TransitionGroup from 'react-addons-transition-group';
 
 var images = [
