@@ -13,6 +13,7 @@ const styles = {
             width: "100%",
             textAlign: "center",
             padding: ".18em",
+            boxShadow: "0px 0px 10px 1px #686888",
             marginBottom: ".8em"
         },
         '& ul': {
@@ -69,7 +70,7 @@ const styles = {
         '&::after':{
             content: "url(./imgs/titleInvertedAfter.svg)",
             position: "absolute",
-            right: "14px",
+            right: "15px",
             top: "20px",
             height: "38px",
             width: "1.5rem",

@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import {style} from 'glamor'
-import {Grid, Row, Col, Form, FormControl, FormGroup, Button } from 'react-bootstrap'
+import {Grid, Row, Col } from 'react-bootstrap'
+import ContactForm from './contactForm'
 
 const styles = {
     footer: style({
         width: '100%',
         textAlign: "center",
+        backgroundColor: '#282832',        
         '& .footer-main': {
-            backgroundColor: '#282832',
             fontSize: "20px",
             '& .col-md-4': {
                 padding: "2em"
@@ -90,60 +92,28 @@ const styles = {
 }
 
 export default class Footer extends Component {
+
     render() {
-        const contactForm = (
-        <Form horizontal>
-            <FormGroup controlId="formHorizontalEmail">
-            <Col sm={10}>
-                <FormControl type="text" placeholder="YOUR NAME" />
-            </Col>
-            </FormGroup>
-
-            <FormGroup controlId="formHorizontalPassword">
-            <Col sm={10}>
-                <FormControl type="email" placeholder="YOUR EMAIL" />
-            </Col>
-            </FormGroup>
-
-            <FormGroup controlId="formHorizontalPassword">
-            <Col sm={10}>
-                <FormControl type="text" placeholder="SUBJECT" />
-            </Col>
-            </FormGroup>
-
-            <FormGroup controlId="formControlsTextarea">
-                <Col sm={10}>
-                    <FormControl componentClass="textarea" placeholder="SEND A MESSAGE" />                
-                </Col>
-            </FormGroup>
-
-            <FormGroup>
-            <Col sm={10}>
-                <Button type="submit">
-                    SEND A MESSAGE
-                </Button>
-            </Col>
-            </FormGroup>
-        </Form>
-        );
         return (
             <footer className={styles.footer}>
                 <Grid bsClass="container-fluid footer-main">
                     <Row>
                         <Col md={4} xs={12}>
+                        <Router>
                             <ul className={styles.footerLinks}>
-                                <li><a href="">Community Guidelines</a></li>
-                                <li><a href="">Terms of Service</a></li>
-                                <li><a href="">Copyright Policy</a></li>
-                                <li><a href="">Privacy Policy</a></li>
+                                <li><Link to="/policies/community">Community Guidelines</Link></li>
+                                <li><Link to="/policies/tos">Terms of Service</Link></li>
+                                <li><Link to="/policies/copyright">Copyright Policy</Link></li>
+                                <li><Link to="/policies/privacy">Privacy Policy</Link></li>
                             </ul>
+                        </Router>
                         </Col>
 
                         <Col md={4} xs={12}>
                             <Col sm={10}>
                                 <h3>Say Hello</h3>
                             </Col>
-                            {contactForm}
+                            <ContactForm/>
                         </Col>
 
                         <Col md={4} xs={12}>

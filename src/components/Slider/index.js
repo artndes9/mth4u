@@ -62,6 +62,7 @@ const styles = {
         marginLeft: "auto",
         marginRight: "auto",
         backgroundColor: "#2e4766",
+        boxShadow: "0px 0px 10px 1px #969696",
         '&::before':{
             content: "url(./imgs/titleBefore.svg)",
             position: "absolute",
