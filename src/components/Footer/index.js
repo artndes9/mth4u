@@ -99,16 +99,13 @@ export default class Footer extends Component {
                 <Grid bsClass="container-fluid footer-main">
                     <Row>
                         <Col md={4} xs={12}>
-                        <Router>
                             <ul className={styles.footerLinks}>
                                 <li><Link to="/policies/community">Community Guidelines</Link></li>
                                 <li><Link to="/policies/tos">Terms of Service</Link></li>
                                 <li><Link to="/policies/copyright">Copyright Policy</Link></li>
                                 <li><Link to="/policies/privacy">Privacy Policy</Link></li>
                             </ul>
-                        </Router>
                         </Col>
-
                         <Col md={4} xs={12}>
                             <Col sm={10}>
                                 <h3>Say Hello</h3>
@@ -125,10 +122,10 @@ export default class Footer extends Component {
                     <Row bsClass="row copyright" {...styles.copyrights}>
                         <Col sm={12} mdPush={4} md={4} >
                             <ul>
-                                <li><a href=" ">HOME</a></li>
-                                <li><a href="">LEARN</a></li>
-                                <li><a href="">GET VIP</a></li>
-                                <li><a href="">CONTACT US</a></li>
+                                <li><Link to="/">HOME</Link></li>
+                                <li><Link to="learn">LEARN</Link></li>
+                                <li><Link to="getVip">GET VIP</Link></li>
+                                <li><Link to="Contact">CONTACT US</Link></li>
                             </ul>
                             
                         </Col>

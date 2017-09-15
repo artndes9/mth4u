@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { Navbar, Nav, NavItem } from 'react-bootstrap'
-// import { LinkContainer } from 'react-router-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
 import CustomNavbarToggle from 'components/Navbar/CustomNavbarToggle'
 import { style } from "glamor"
 
@@ -41,9 +41,9 @@ class MthNavbar extends Component{
                     </Navbar.Header>
                     <Navbar.Collapse {...styles.navbarCollapse} >
                         <Nav>
-                            <NavItem eventKey={1} href="#">HOME</NavItem>
-                            <NavItem eventKey={2} href="#">EQUATIONS</NavItem>
-                            <NavItem eventKey={2} href="#">QUICK SOLVE</NavItem>
+                            <LinkContainer exact to="/"><NavItem>HOME</NavItem></LinkContainer>
+                            <LinkContainer to="/equations"><NavItem>EQUATIONS</NavItem></LinkContainer>
+                            <LinkContainer to="/solve"><NavItem>QUICK SOLVE</NavItem></LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

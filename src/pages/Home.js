@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { style } from "glamor"
 import TransitionGroup from 'react-addons-transition-group';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Preload from 'react-preload'
 import Footer from '../components/Footer'
@@ -36,12 +36,8 @@ class Home extends Component {
         >
             <div className="body">
                 <Navbar/>
-                <Router>
-                    <div>
-                        <Route exact path='/' component={HomePage}/>
-                        <Route path='/policies/:id' component={Policy}/>
-                    </div>                
-                </Router>
+                    <Route exact path='/' component={HomePage}/>
+                    <Route path='/policies/:id' component={Policy}/>
                 <Footer />
             </div>
         </Preload>
