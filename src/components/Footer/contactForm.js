@@ -51,11 +51,14 @@ export default class ContactForm extends Component {
       _handleSubmit(e) {
         e.preventDefault();
         this.setState({
+          contactName: '',
           contactEmail: '',
+          contactSubject: '',
           contactMessage: ''
         });
         let _this = this;
-        axios.post( 'http://theroguepixel.com/mailers/mth4umailer.php', {
+        axios.post( '/mth4umailer.php', {
+            form_name: this.state.contactName,
             form_email: this.state.contactEmail,
             form_subject: this.state.contactSubject,
             form_msg: this.state.contactMessage
@@ -114,17 +117,17 @@ export default class ContactForm extends Component {
                     <FormControl 
                         componentClass="textarea" 
                         placeholder="SEND A MESSAGE"
-                        value={this.state.contactMsg}
-                        onChange={this._handleChangemsg} />                
+                        value={this.state.contactMessage}
+                        onChange={this._handleChangeMsg} />
                 </Col>
             </FormGroup>
     
             <FormGroup>
-            <Col sm={10}>
-                <Button type="submit">
-                    SEND A MESSAGE
-                </Button>
-            </Col>
+                <Col sm={10}>
+                    <Button type="submit">
+                        SEND A MESSAGE
+                    </Button>
+                </Col>
             </FormGroup>
         </Form>
           )
