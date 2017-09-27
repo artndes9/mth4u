@@ -164,26 +164,6 @@ export default class PopularVideos extends Component {
                              <iframe title="fbShare" src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2FMTHforU%2F&width=450&height=80&layout=standard&size=large&show_faces=true&appId" width="450" height="80" style={{border:"none",overflow:"hidden",position:"relative",top:"18px",maxWidth:"100%"}} scrolling="no" allowTransparency="true"></iframe>
                         </Col>
                     </Row>
-                    {
-
-                        // <Row>
-                        //     <Col xs={12} sm={12} md={8} mdPush={2}>
-                        //     <div className={styles.sliderWrapper}>
-                        //     { 
-                        //         _.isEmpty(videoList)? (
-                        //             <div className={styles.spinner}>
-                        //             <VideoSpinner />
-                        //             </div>
-                        //         ) : (
-                        //             <Slider ref={ s => this.slider = s }  {...sliderOptions} >
-                        //             { _.map(videoList, (video, index) => <div key={video.id}><Slide index={index}  video={video} /></div> )  }
-                        //             </Slider>
-                        //         ) 
-                        //     }
-                        //     </div>
-                        //     </Col>
-                        //     </Row>
-                    }
                 </Grid>
             </section>
         )
